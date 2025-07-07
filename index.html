@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tampa Panel Press</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    header { background:#2a5d34; color:#fff; padding:20px; text-align:center; }
+    header img { max-height:80px; }
+    section { padding:20px; }
+    #sheetContainer fieldset { margin-bottom:10px; }
+    #invoice { width:100%; border-collapse: collapse; margin-top:20px; }
+    #invoice th, #invoice td { border:1px solid #ccc; padding:8px; }
+    #grandTotal { font-weight:bold; margin-top:10px; }
+    footer { text-align:center; padding:10px; font-size:0.8em; color:#666; }
+    button { padding:10px 15px; margin-right:5px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo">
+    <h1>Wood Veneer & Laminate Pressing</h1>
+    <p>Precision hot pressing for cabinet shops & millwork professionals</p>
+  </header>
+  <section id="what">
+    <h2>What We Do</h2>
+    <p>High-quality veneer and laminate pressing with tight glue lines and fast turnaround.</p>
+  </section>
+  <section id="why">
+    <h2>Why Tampa Panel?</h2>
+    <ul>
+      <li>Industrial-grade Joos Junior press</li>
+      <li>Up to 4×8' panels</li>
+      <li>Expert glue application</li>
+      <li>Local Tampa Bay service</li>
+    </ul>
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: mindfullyremoved@tampapanel.com<br>Phone: 813-600-9562</p>
+  </section>
+  <section id="calculator">
+    <h2>Order Calculator</h2>
+    <button id="addSheetBtn">Add Sheet</button>
+    <button id="calculateBtn">Calculate Invoice</button>
+    <div id="sheetContainer"></div>
+    <table id="invoice">
+      <thead><tr><th>#</th><th>Material</th><th>Width (in)</th><th>Length (in)</th><th>Qty</th><th>Cost</th></tr></thead>
+      <tbody id="invoiceBody"></tbody>
+    </table>
+    <p id="grandTotal"></p>
+  </section>
+  <footer>© 2025 Tampa Panel Press</footer>
+  <script>
+    const GLUE_RATE = 0.05;
+    const MATERIAL_RATE = 0.1;
+    const PROCESSING_FEE = 10;
+    let sheetCount = 0;
+    function addSheet() {
+      sheetCount++;
+      const fs = document.createElement('fieldset');
+      fs.innerHTML = 
+        <legend>Sheet </legend>
+        <label>Material:
+          <select class="material">
+            <option value="Veneer">Veneer</option>
+            <option value="Laminate">Laminate</option>
+          </select>
+        </label>
+        <label>Width (in): <input type="number" class="width" value="0"></label>
+        <label>Length (in): <input type="number" class="length" value="0"></label>
+        <label>Quantity: <input type="number" class="quantity" value="1"></label>
+        <button type="button" class="removeBtn">Remove</button>
+      ;
+      fs.querySelector('.removeBtn').addEventListener('click', () => {
+        fs.remove();
+        reindexSheets();
+      });
+      document.getElementById('sheetContainer').appendChild(fs);
+    }
+    function reindexSheets() {
+      sheetCount = 0;
+      document.querySelectorAll('#sheetContainer fieldset').forEach((fs, idx) => {
+        sheetCount = idx + 1;
+        fs.querySelector('legend').innerText = Sheet ;
+      });
+    }
+    function calculateInvoice() {
+      const tbody = document.getElementById('invoiceBody');
+      tbody.innerHTML = '';
+      let total = PROCESSING_FEE;
+      document.querySelectorAll('#sheetContainer fieldset').forEach((fs, idx) => {
+        const material = fs.querySelector('.material').value;
+        const w = parseFloat(fs.querySelector('.width').value) || 0;
+        const l = parseFloat(fs.querySelector('.length').value) || 0;
+        const q = parseInt(fs.querySelector('.quantity').value) || 0;
+        const area = w * l / 144;
+        const cost = (area * MATERIAL_RATE + GLUE_RATE) * q;
+        total += cost;
+        const row = document.createElement('tr');
+        row.innerHTML = 
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>C:\Users\18136\Desktop\TampaPanelSite{cost.toFixed(2)}</td>
+        ;
+        tbody.appendChild(row);
+      });
+      document.getElementById('grandTotal').innerText = Grand Total: C:\Users\18136\Desktop\TampaPanelSite{total.toFixed(2)};
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      addSheet();
+      document.getElementById('addSheetBtn').addEventListener('click', addSheet);
+      document.getElementById('calculateBtn').addEventListener('click', calculateInvoice);
+    });
+  </script>
+</body>
+</html>
