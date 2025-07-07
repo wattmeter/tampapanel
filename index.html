@@ -1,120 +1,66 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tampa Panel Press</title>
+  <title>Tampa Panel Press | Wood Veneer & Laminate Layup</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; }
-    header { background:#2a5d34; color:#fff; padding:20px; text-align:center; }
-    header img { max-height:80px; }
-    section { padding:20px; }
-    #sheetContainer fieldset { margin-bottom:10px; }
-    #invoice { width:100%; border-collapse: collapse; margin-top:20px; }
-    #invoice th, #invoice td { border:1px solid #ccc; padding:8px; }
-    #grandTotal { font-weight:bold; margin-top:10px; }
-    footer { text-align:center; padding:10px; font-size:0.8em; color:#666; }
-    button { padding:10px 15px; margin-right:5px; cursor:pointer; }
+    body { background-color:#FCFCF8; color:#333; font-family:"Segoe UI",sans-serif; margin:0; padding:20px; text-align:center; }
+    .container { max-width:800px; margin:auto; }
+    img.logo { max-width:250px; margin:20px auto; display:block; }
+    h1,h2,h3 { color:#AA3333; margin:20px 0 10px; }
+    ul,ol { text-align:left; margin:0 auto 20px; display:inline-block; padding:0; }
+    ul.pricing { list-style:none; }
+    ul.pricing li { margin:5px 0; font-size:1.1em; }
+    .contact a { color:#333; text-decoration:none; display:block; margin:5px 0; }
+    iframe { width:100%; max-width:800px; height:300px; border:0; margin-top:20px; }
+    footer { margin-top:40px; color:#777; font-size:0.9em; }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Logo">
-    <h1>Wood Veneer & Laminate Pressing</h1>
-    <p>Precision hot pressing for cabinet shops & millwork professionals</p>
-  </header>
-  <section id="what">
-    <h2>What We Do</h2>
-    <p>High-quality veneer and laminate pressing with tight glue lines and fast turnaround.</p>
-  </section>
-  <section id="why">
-    <h2>Why Tampa Panel?</h2>
+  <div class="container">
+    <img class="logo" src="logo.png" alt="Tampa Panel Press Logo">
+    <h1>Wood Veneer & Laminate Layup</h1>
+    <p><em>Precision hot pressing since 2025</em></p>
+
+    <h2>Why Choose Tampa Panel Press?</h2>
     <ul>
-      <li>Industrial-grade Joos Junior press</li>
-      <li>Up to 4×8' panels</li>
-      <li>Expert glue application</li>
-      <li>Local Tampa Bay service</li>
+      <li><strong>Fast Turnaround:</strong> Keep your projects on schedule.</li>
+      <li><strong>Red-Carpet Service:</strong> Simple forms, clear invoicing, VIP treatment.</li>
+      <li><strong>Central Tampa Heights:</strong> Minutes from I-275 & I-4 and major cabinet shops.</li>
+      <li><strong>Guaranteed Void-Free Bonds:</strong> Hand‐inspected & thermally verified every sheet.</li>
+      <li><strong>Humidity Control:</strong> Shop at 50–55% RH for warp-free panels.</li>
     </ul>
-  </section>
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: mindfullyremoved@tampapanel.com<br>Phone: 813-600-9562</p>
-  </section>
-  <section id="calculator">
-    <h2>Order Calculator</h2>
-    <button id="addSheetBtn">Add Sheet</button>
-    <button id="calculateBtn">Calculate Invoice</button>
-    <div id="sheetContainer"></div>
-    <table id="invoice">
-      <thead><tr><th>#</th><th>Material</th><th>Width (in)</th><th>Length (in)</th><th>Qty</th><th>Cost</th></tr></thead>
-      <tbody id="invoiceBody"></tbody>
-    </table>
-    <p id="grandTotal"></p>
-  </section>
-  <footer>© 2025 Tampa Panel Press</footer>
-  <script>
-    const GLUE_RATE = 0.05;
-    const MATERIAL_RATE = 0.1;
-    const PROCESSING_FEE = 10;
-    let sheetCount = 0;
-    function addSheet() {
-      sheetCount++;
-      const fs = document.createElement('fieldset');
-      fs.innerHTML = 
-        <legend>Sheet </legend>
-        <label>Material:
-          <select class="material">
-            <option value="Veneer">Veneer</option>
-            <option value="Laminate">Laminate</option>
-          </select>
-        </label>
-        <label>Width (in): <input type="number" class="width" value="0"></label>
-        <label>Length (in): <input type="number" class="length" value="0"></label>
-        <label>Quantity: <input type="number" class="quantity" value="1"></label>
-        <button type="button" class="removeBtn">Remove</button>
-      ;
-      fs.querySelector('.removeBtn').addEventListener('click', () => {
-        fs.remove();
-        reindexSheets();
-      });
-      document.getElementById('sheetContainer').appendChild(fs);
-    }
-    function reindexSheets() {
-      sheetCount = 0;
-      document.querySelectorAll('#sheetContainer fieldset').forEach((fs, idx) => {
-        sheetCount = idx + 1;
-        fs.querySelector('legend').innerText = Sheet ;
-      });
-    }
-    function calculateInvoice() {
-      const tbody = document.getElementById('invoiceBody');
-      tbody.innerHTML = '';
-      let total = PROCESSING_FEE;
-      document.querySelectorAll('#sheetContainer fieldset').forEach((fs, idx) => {
-        const material = fs.querySelector('.material').value;
-        const w = parseFloat(fs.querySelector('.width').value) || 0;
-        const l = parseFloat(fs.querySelector('.length').value) || 0;
-        const q = parseInt(fs.querySelector('.quantity').value) || 0;
-        const area = w * l / 144;
-        const cost = (area * MATERIAL_RATE + GLUE_RATE) * q;
-        total += cost;
-        const row = document.createElement('tr');
-        row.innerHTML = 
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>C:\Users\18136\Desktop\TampaPanelSite{cost.toFixed(2)}</td>
-        ;
-        tbody.appendChild(row);
-      });
-      document.getElementById('grandTotal').innerText = Grand Total: C:\Users\18136\Desktop\TampaPanelSite{total.toFixed(2)};
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      addSheet();
-      document.getElementById('addSheetBtn').addEventListener('click', addSheet);
-      document.getElementById('calculateBtn').addEventListener('click', calculateInvoice);
-    });
-  </script>
+
+    <h2>Our Services</h2>
+    <ul>
+      <li><strong>Wood Veneer Lay-Up:</strong> Cherry, Walnut, Maple, Oak & more.</li>
+      <li><strong>HPL & Plastic Laminate:</strong> Formica®, Wilsonart®, Laminati, Pionite, Nevamar®.</li>
+      <li><strong>Premium Adhesives:</strong> PVA, phenolic & urea resin—no solvent glues.</li>
+      <li><strong>Edge Trimming Included:</strong> All services include clean, finished edges.</li>
+      <li><strong>Custom Sourcing:</strong> We can order, inspect & store your materials.</li>
+    </ul>
+
+    <h2>Volume Pricing (Per 4×8 Sheet, Both Sides)</h2>
+    <ul class="pricing">
+      <li>1–9 sheets: <strong>$49/sheet</strong></li>
+      <li>10–49 sheets: <strong>$44/sheet</strong></li>
+      <li>50+ sheets: <strong>$39/sheet</strong></li>
+    </ul>
+
+    <h2>Contact & Location</h2>
+    <a href="tel:8136009562">📞 813-600-9562</a>
+    <a href="mailto:info@tampapanel.com">✉️ info@tampapanel.com</a>
+    <p>📍 107 E. Adalee St, Tampa FL 33603</p>
+    <p>🕒 Mon–Fri: 8 AM – 5 PM</p>
+
+    <h2>Find Us Here</h2>
+    <iframe 
+      src="https://maps.google.com/maps?q=107+E+Adalee+St,+Tampa,+FL+33603&output=embed" 
+      allowfullscreen 
+      loading="lazy">
+    </iframe>
+
+    <footer>© 2025 Tampa Panel Press</footer>
+  </div>
 </body>
 </html>
