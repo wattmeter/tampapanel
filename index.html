@@ -6,103 +6,211 @@
   <title>Tampa Panel Press | Wood Veneer &amp; Laminate Layup</title>
   <meta name="description" content="Tampa Panel Press — precision hot pressing for wood veneer and laminate panels in Tampa Heights, FL. No minimums, 3-5 day turnaround, void-free guarantee.">
   <style>
-    body { background-color:#FCFCF8; color:#333333; font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif; margin:0; padding:20px; text-align:center; }
-    .container { max-width:800px; margin:0 auto; }
-    img.logo { max-width:400px; margin:20px auto; display:block; }
-    h1,h2 { color:#AA3333; margin:20px 0 10px; }
-    ul,ol { text-align:left; margin:0 auto 20px; display:inline-block; padding:0; }
-    ul li, ol li { margin-bottom:10px; line-height:1.6; }
-    ul.pricing { list-style:none; }
-    ul.pricing li { margin:5px 0; font-size:1.1em; }
-    .contact a { color:#333; text-decoration:none; display:block; margin:5px 0; }
-    .contact a:hover { color:#AA3333; }
-    iframe { width:100%; max-width:800px; height:300px; border:0; margin-top:20px; }
-    .price-disclaimer { font-size:0.85em; color:#888; max-width:600px; margin:0 auto 20px; line-height:1.5; }
-    footer { margin-top:40px; color:#777; font-size:0.85em; border-top:1px solid #ddd; padding-top:20px; }
-    footer a { color:#AA3333; text-decoration:none; margin:0 8px; }
-    footer a:hover { text-decoration:underline; }
-    .entity-notice { font-size:0.8em; color:#aaa; margin-top:8px; }
+    /* Skip link for keyboard/screen reader users */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #AA3333;
+      color: #fff;
+      padding: 8px 16px;
+      z-index: 9999;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 0 0 4px 0;
+    }
+    .skip-link:focus { top: 0; }
+
+    body {
+      background-color: #FCFCF8;
+      color: #333333;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    img.logo { max-width: 400px; margin: 20px auto; display: block; }
+    h1, h2 { color: #AA3333; margin: 20px 0 10px; }
+    ul, ol {
+      text-align: left;
+      margin: 0 auto 20px;
+      display: inline-block;
+      padding: 0;
+    }
+    ul li, ol li { margin-bottom: 10px; line-height: 1.6; }
+    ul.pricing { list-style: none; }
+    ul.pricing li { margin: 5px 0; font-size: 1.1em; }
+    .contact a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+    }
+    .contact a:hover, .contact a:focus { color: #AA3333; text-decoration: underline; }
+    .cta-button {
+      display: inline-block;
+      margin: 16px auto;
+      padding: 14px 28px;
+      background: #AA3333;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05em;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+    .cta-button:hover, .cta-button:focus {
+      background: #8b2222;
+      outline: 3px solid #333;
+      outline-offset: 2px;
+    }
+    iframe { width: 100%; max-width: 800px; height: 300px; border: 0; margin-top: 20px; }
+    .price-disclaimer {
+      font-size: 0.85em;
+      color: #888;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+    .price-disclaimer a { color: #AA3333; }
+    footer {
+      margin-top: 40px;
+      color: #777;
+      font-size: 0.85em;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+    }
+    footer a { color: #AA3333; text-decoration: none; margin: 0 8px; }
+    footer a:hover, footer a:focus { text-decoration: underline; }
+    .entity-notice { font-size: 0.8em; color: #aaa; margin-top: 8px; }
+
+    /* Focus styles for keyboard navigation */
+    a:focus, button:focus { outline: 3px solid #AA3333; outline-offset: 2px; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img class="logo" src="logo.png" alt="Tampa Panel Press Logo">
-    <h1>Tampa Panel Wood Veneer &amp; Sheet Layup</h1>
-    <p><em>Custom-Bond Hot Pressing</em></p>
 
-    <h2>Why Choose Tampa Panel?</h2>
-    <ul>
-      <li><strong>Fast Turnaround:</strong> Stay on schedule and manage expectations.</li>
-      <li><strong>No Minimums:</strong> From one sheet to hundreds, we've got you covered.</li>
-      <li><strong>Red-Carpet Service:</strong> Easy forms, clear pricing, dedicated support.</li>
-      <li><strong>Central Location:</strong> Tampa Heights, minutes from I-275, I-4, and area cabinet shops.</li>
-      <li><strong>Void-Free Guarantee:</strong> Every sheet hand-inspected and thermally verified.</li>
-      <li><strong>Detailed Reporting:</strong> Full process details and sheet QC documentation on every job.</li>
-    </ul>
+  <!-- Skip navigation link for screen readers and keyboard users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <h2>Advanced Capabilities &amp; Quality Assurance</h2>
-    <ul>
-      <li><strong>Industrial Joos German Hot Press:</strong> Precise up to 120&nbsp;°C @ 5&nbsp;bar for uniform, void-free bonds—far stronger than vacuum bagging.</li>
-      <li><strong>Humidity-Controlled Environment:</strong> Shop held at 50–55% RH with industrial dehumidifiers to prevent warp, veneer defects, and ensure proper seasoning.</li>
-      <li><strong>Thermal-Imaging Inspection:</strong> Infrared photos catch temperature variances and verify bond quality across every sheet.</li>
-      <li><strong>Precision Stacking &amp; Weighting:</strong> Cool-down stacking and weighting steps ensure flatness and stability post-press.</li>
-    </ul>
-
-    <h2>Financial Benefits Over DIY &amp; Competitors</h2>
-    <ul>
-      <li><strong>Save on Labor &amp; Overhead:</strong> Eliminate in-house oversight, operator training, and burden on shop space and electrical infrastructure.</li>
-      <li><strong>Reduce Waste &amp; Rework:</strong> Avoid vacuum-bag bubbles and contact-cement failures—our process minimizes scrap and callbacks.</li>
-      <li><strong>No Capital Investment:</strong> No need to buy or maintain expensive pressing equipment.</li>
-      <li><strong>Better than Lumber-Yards:</strong> Plywood and veneer vendors use third-party shops to fulfill layup orders. Skip the middlemen for faster turnarounds and consistent quality you can trust.</li>
-    </ul>
-
-    <h2>Our Services (4×8 Panels Only)</h2>
-    <ul>
-      <li><strong>Wood Veneer Lay-Up:</strong> Cherry, Walnut, Maple, Oak &amp; exotic species.</li>
-      <li><strong>HPL &amp; Plastic Laminates:</strong> Formica&reg;, Wilsonart&reg;, Laminati&reg;, Pionite&reg;, Nevamar&reg; &amp; more.</li>
-      <li><strong>Premium Adhesives:</strong> Custom-bond PVA, phenolic &amp; urea resins—no solvent glues.</li>
-      <li><strong>Edge Trimming Included:</strong> Flush-trimmed edges for a turnkey finish.</li>
-      <li><strong>Custom Sourcing:</strong> Optional material ordering, inspection, storage &amp; staging.</li>
-    </ul>
-
-    <h2>Typical Volume Pricing (Per 4×8 Sheet, Both Sides)</h2>
-    <ul class="pricing">
-      <li>1–9 sheets: <strong>$49/sheet</strong></li>
-      <li>10–49 sheets: <strong>$44/sheet</strong></li>
-      <li>50+ sheets: <strong>$39/sheet</strong></li>
-    </ul>
-    <p class="price-disclaimer">
-      Pricing shown is typical for standard PVA adhesive with customer-supplied materials.
-      Final price confirmed on written quote. Subject to change without notice.
-      Delivery available at $150 flat rate; free drop-off &amp; pick-up.
-      <a href="/terms.html" style="color:#AA3333;">See full Terms of Service.</a>
-    </p>
-
-    <h2>Contact &amp; Location</h2>
-    <div class="contact">
-      <a href="tel:8136009562">&#128222; 813-600-9562</a>
-      <a href="mailto:info@tampapanel.com">&#9993; info@tampapanel.com</a>
-      <p>&#128205; 107 E. Adalee St, Tampa, FL 33603</p>
-      <p>&#128336; Mon–Fri: 8 AM – 5 PM</p>
+  <!-- Site header -->
+  <header role="banner">
+    <div class="container">
+      <a href="/" aria-label="Tampa Panel Press home page">
+        <img class="logo" src="logo.png" alt="Tampa Panel Press — Wood Veneer and Laminate Layup">
+      </a>
     </div>
+  </header>
 
-    <h2>Find Us Here</h2>
-    <iframe
-      title="Tampa Panel Press location at 107 E Adalee St Tampa FL"
-      src="https://maps.google.com/maps?q=107+E+Adalee+St,+Tampa,+FL+33603&amp;output=embed"
-      allowfullscreen
-      loading="lazy">
-    </iframe>
+  <!-- Main content -->
+  <main id="main-content" role="main">
+    <div class="container">
 
-    <footer>
+      <h1>Tampa Panel Wood Veneer &amp; Sheet Layup</h1>
+      <p><em>Custom-Bond Hot Pressing</em></p>
+
+      <section aria-labelledby="why-us">
+        <h2 id="why-us">Why Choose Tampa Panel?</h2>
+        <ul>
+          <li><strong>Fast Turnaround:</strong> Stay on schedule and manage expectations.</li>
+          <li><strong>No Minimums:</strong> From one sheet to hundreds, we've got you covered.</li>
+          <li><strong>Red-Carpet Service:</strong> Easy forms, clear pricing, dedicated support.</li>
+          <li><strong>Central Location:</strong> Tampa Heights, minutes from I-275, I-4, and area cabinet shops.</li>
+          <li><strong>Void-Free Guarantee:</strong> Every sheet hand-inspected and thermally verified.</li>
+          <li><strong>Detailed Reporting:</strong> Full process details and sheet QC documentation on every job.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="capabilities">
+        <h2 id="capabilities">Advanced Capabilities &amp; Quality Assurance</h2>
+        <ul>
+          <li><strong>Industrial Joos German Hot Press:</strong> Precise up to 120&nbsp;&#8451; @ 5&nbsp;bar for uniform, void-free bonds&mdash;far stronger than vacuum bagging.</li>
+          <li><strong>Humidity-Controlled Environment:</strong> Shop held at 50&ndash;55% RH with industrial dehumidifiers to prevent warp, veneer defects, and ensure proper seasoning.</li>
+          <li><strong>Thermal-Imaging Inspection:</strong> Infrared photos catch temperature variances and verify bond quality across every sheet.</li>
+          <li><strong>Precision Stacking &amp; Weighting:</strong> Cool-down stacking and weighting steps ensure flatness and stability post-press.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="benefits">
+        <h2 id="benefits">Financial Benefits Over DIY &amp; Competitors</h2>
+        <ul>
+          <li><strong>Save on Labor &amp; Overhead:</strong> Eliminate in-house oversight, operator training, and burden on shop space and electrical infrastructure.</li>
+          <li><strong>Reduce Waste &amp; Rework:</strong> Avoid vacuum-bag bubbles and contact-cement failures&mdash;our process minimizes scrap and callbacks.</li>
+          <li><strong>No Capital Investment:</strong> No need to buy or maintain expensive pressing equipment.</li>
+          <li><strong>Better than Lumber-Yards:</strong> Plywood and veneer vendors use third-party shops to fulfill layup orders. Skip the middlemen for faster turnarounds and consistent quality you can trust.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="services">
+        <h2 id="services">Our Services (4&times;8 Panels Only)</h2>
+        <ul>
+          <li><strong>Wood Veneer Lay-Up:</strong> Cherry, Walnut, Maple, Oak &amp; exotic species.</li>
+          <li><strong>HPL &amp; Plastic Laminates:</strong> Formica&reg;, Wilsonart&reg;, Laminati&reg;, Pionite&reg;, Nevamar&reg; &amp; more.</li>
+          <li><strong>Premium Adhesives:</strong> Custom-bond PVA, phenolic &amp; urea resins&mdash;no solvent glues.</li>
+          <li><strong>Edge Trimming Included:</strong> Flush-trimmed edges for a turnkey finish.</li>
+          <li><strong>Custom Sourcing:</strong> Optional material ordering, inspection, storage &amp; staging.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="pricing">
+        <h2 id="pricing">Typical Volume Pricing (Per 4&times;8 Sheet, Both Sides)</h2>
+        <ul class="pricing" aria-label="Volume pricing tiers">
+          <li>1&ndash;9 sheets: <strong>$49/sheet</strong></li>
+          <li>10&ndash;49 sheets: <strong>$44/sheet</strong></li>
+          <li>50+ sheets: <strong>$39/sheet</strong></li>
+        </ul>
+        <p class="price-disclaimer">
+          Pricing shown is typical for standard PVA adhesive with customer-supplied materials.
+          Final price confirmed on written quote. Subject to change without notice.
+          Delivery available at $150 flat rate; free drop-off &amp; pick-up.
+          <a href="/terms.html">See full Terms of Service.</a>
+        </p>
+        <a href="tel:8136009562" class="cta-button" aria-label="Call us to request a quote: 813-600-9562">
+          &#128222; Call to Request a Quote: 813-600-9562
+        </a>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">Contact &amp; Location</h2>
+        <address class="contact">
+          <a href="tel:8136009562" aria-label="Call Tampa Panel Press at 813-600-9562">&#128222; 813-600-9562</a>
+          <a href="mailto:info@tampapanel.com" aria-label="Email Tampa Panel Press">&#9993; info@tampapanel.com</a>
+          <p>&#128205; 107 E. Adalee St, Tampa, FL 33603</p>
+          <p>&#128336; Mon&ndash;Fri: 8 AM &ndash; 5 PM</p>
+        </address>
+      </section>
+
+      <section aria-labelledby="map-heading">
+        <h2 id="map-heading">Find Us Here</h2>
+        <iframe
+          title="Map showing Tampa Panel Press location at 107 E Adalee St Tampa FL 33603"
+          aria-label="Google Maps showing Tampa Panel Press location"
+          src="https://maps.google.com/maps?q=107+E+Adalee+St,+Tampa,+FL+33603&amp;output=embed"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site footer -->
+  <footer role="contentinfo">
+    <div class="container">
       <p>&copy; 2026 Tampa Panel Press</p>
       <p class="entity-notice">Tampa Panel Press is a business operating in Tampa, Florida. This site is intended for B2B trade customers.</p>
-      <p>
+      <nav aria-label="Footer navigation">
         <a href="/privacy-policy.html">Privacy Policy</a>
         <a href="/terms.html">Terms of Service</a>
         <a href="mailto:info@tampapanel.com">Contact Us</a>
+      </nav>
+      <p class="entity-notice">
+        All pricing subject to written quote confirmation. &nbsp;|&nbsp;
+        <a href="/accessibility.html">Accessibility Statement</a>
       </p>
-    </footer>
-  </div>
+    </div>
+  </footer>
+
 </body>
 </html>
