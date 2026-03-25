@@ -14,7 +14,6 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{
       --cream:#F8F1E6;
-      --cream-dk:#EDE6D8;
       --walnut:#3B2314;
       --walnut-md:#5C3A22;
       --rust:#8B3A1A;
@@ -52,18 +51,111 @@
     .services-list li{background:var(--card-bg);border:1px solid var(--border);padding:16px 20px;font-size:0.93em;}
     .services-list li strong{font-family:'Raleway',sans-serif;font-size:1em;color:var(--walnut);display:block;margin-bottom:3px;}
     .services-list li span{color:var(--text-md);}
-    .pricing-row{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
-    .pricing-card{background:var(--card-bg);border:1px solid var(--border);padding:28px 24px;text-align:center;min-width:160px;flex:1;max-width:210px;}
-    .pricing-card.featured{border:2px solid var(--rust);background:#FFF9F5;}
-    .pricing-card .tier{font-size:0.72em;color:var(--text-lt);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;}
-    .pricing-card .price{font-family:'Raleway',sans-serif;font-size:2.4em;font-weight:700;color:var(--rust);line-height:1;}
-    .pricing-card .per{font-size:0.75em;color:var(--text-lt);margin-top:6px;}
-    .featured .tier{color:var(--rust);font-weight:700;}
-    .price-note{text-align:center;font-size:0.8em;color:var(--text-lt);max-width:580px;margin:0 auto 28px;line-height:1.6;}
+
+    /* ---- Pricing — redesigned ---- */
+    .pricing-wrap{
+      background: var(--walnut);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .pricing-header{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .pricing-header-cell{
+      padding: 14px 20px;
+      text-align: center;
+      font-size: 0.7em;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(212,149,106,0.8);
+    }
+    .pricing-header-cell:not(:last-child){
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .pricing-row-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .pricing-cell{
+      padding: 28px 20px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .pricing-cell:not(:last-child){
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .pricing-cell.featured{
+      background: rgba(255,255,255,0.04);
+    }
+    .pricing-qty{
+      font-size: 0.72em;
+      color: rgba(248,241,230,0.45);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .pricing-amount{
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 2.8em;
+      color: #F8F1E6;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .pricing-cell.featured .pricing-amount{
+      color: #D4956A;
+    }
+    .pricing-per{
+      font-size: 0.72em;
+      color: rgba(248,241,230,0.4);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .pricing-badge{
+      display: inline-block;
+      font-size: 0.6em;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #D4956A;
+      border: 1px solid rgba(212,149,106,0.4);
+      padding: 2px 8px;
+      border-radius: 2px;
+      margin-bottom: 10px;
+    }
+    .pricing-extras{
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 0;
+      margin-bottom: 24px;
+      font-size: 0.85em;
+      color: var(--text-md);
+    }
+    .pricing-extras span{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pricing-extras span::before{
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--rust-lt);
+    }
+    .price-note{text-align:center;font-size:0.78em;color:var(--text-lt);max-width:560px;margin:0 auto 24px;line-height:1.6;}
     .price-note a{color:var(--rust);}
     .cta-wrap{text-align:center;}
     .cta-wrap a{display:inline-block;background:var(--rust);color:#FBF8F2;text-decoration:none;font-family:'Lato',sans-serif;font-weight:700;font-size:0.95em;padding:13px 30px;border-radius:2px;letter-spacing:0.06em;text-transform:uppercase;transition:background 0.2s;}
     .cta-wrap a:hover,.cta-wrap a:focus{background:var(--walnut-md);outline:3px solid var(--walnut);outline-offset:2px;}
+
     .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
     .benefit-item{padding:20px 22px;background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--rust-lt);}
     .benefit-item strong{font-family:'Raleway',sans-serif;font-size:1em;color:var(--walnut);display:block;margin-bottom:6px;}
@@ -84,7 +176,8 @@
       .hero{padding:36px 20px 32px;}
       .hero h1{font-size:1.6em;}
       .section{padding:40px 20px;}
-      .pricing-card{max-width:100%;}
+      .pricing-amount{font-size:2em;}
+      .pricing-extras{gap:16px;}
     }
   </style>
 </head>
@@ -129,12 +222,37 @@
     <section class="section" aria-labelledby="pricing">
       <h2 class="section-title" id="pricing">Typical Volume Pricing</h2>
       <p class="section-subtitle">Per 4&times;8 sheet &mdash; both sides &mdash; customer-supplied materials</p>
-      <div class="pricing-row">
-        <div class="pricing-card"><div class="tier">1&ndash;9 Sheets</div><div class="price">$49</div><div class="per">per sheet</div></div>
-        <div class="pricing-card featured"><div class="tier">&#9733; 10&ndash;49 Sheets</div><div class="price">$44</div><div class="per">per sheet</div></div>
-        <div class="pricing-card"><div class="tier">50+ Sheets</div><div class="price">$39</div><div class="per">per sheet</div></div>
+      <div class="pricing-wrap" role="table" aria-label="Volume pricing">
+        <div class="pricing-header" role="row">
+          <div class="pricing-header-cell" role="columnheader">Volume</div>
+          <div class="pricing-header-cell" role="columnheader">Price per Sheet</div>
+          <div class="pricing-header-cell" role="columnheader">Savings</div>
+        </div>
+        <div class="pricing-row-grid" role="row">
+          <div class="pricing-cell" role="cell">
+            <div class="pricing-qty">1&ndash;9 sheets</div>
+            <div class="pricing-amount">$49</div>
+            <div class="pricing-per">per sheet</div>
+          </div>
+          <div class="pricing-cell featured" role="cell">
+            <div class="pricing-badge">Most Common</div>
+            <div class="pricing-qty">10&ndash;49 sheets</div>
+            <div class="pricing-amount">$44</div>
+            <div class="pricing-per">per sheet</div>
+          </div>
+          <div class="pricing-cell" role="cell">
+            <div class="pricing-qty">50+ sheets</div>
+            <div class="pricing-amount">$39</div>
+            <div class="pricing-per">per sheet</div>
+          </div>
+        </div>
       </div>
-      <p class="price-note">Pricing typical for standard PVA adhesive, customer-supplied materials. Final price confirmed on written quote. Subject to change without notice. Delivery $150 flat rate &mdash; free drop-off &amp; pick-up. <a href="/terms.html">See Terms of Service.</a></p>
+      <div class="pricing-extras" aria-label="Additional fees">
+        <span>Edge trimming included</span>
+        <span>Free drop-off &amp; pick-up</span>
+        <span>Delivery available &mdash; $150 flat</span>
+      </div>
+      <p class="price-note">Pricing typical for standard PVA adhesive, customer-supplied materials. Final price confirmed on written quote. Subject to change without notice. <a href="/terms.html">See Terms of Service.</a></p>
       <div class="cta-wrap"><a href="tel:8136009562" aria-label="Call 813-600-9562 to request a quote">&#9742;&nbsp; Call to Request a Quote &mdash; 813-600-9562</a></div>
     </section>
     <section class="section" aria-labelledby="benefits">
